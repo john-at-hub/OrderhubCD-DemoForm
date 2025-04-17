@@ -22,7 +22,7 @@ function App() {
       <h2 className="text-3xl font-bold underline">Tailwind is workng</h2>
       <Button />
       <div>
-        <Calendar />
+        {/* <Calendar /> */}
       </div>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
