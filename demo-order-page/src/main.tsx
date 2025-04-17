@@ -16,6 +16,5 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/form-test" element={<FormPage />} />
       </Routes>
     </BrowserRouter>
-    <App />
   </StrictMode>,
 )
