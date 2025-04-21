@@ -77,6 +77,15 @@ import {
 import {
   Checkbox
 } from '@/components/ui/checkbox'
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
 export const GeneratedForm = () => {
   const [step, setStep] = useState(0)
@@ -185,6 +194,60 @@ export const GeneratedForm = () => {
         </FormItem>
       )}
     />
+
+    <FormField
+      key="mjZdGtNb"
+      control={control}
+      name="mjZdGtNb"
+      render={({ field }) => (
+        <FormItem>
+          <FormLabel>Email</FormLabel>
+          <FormControl>
+            <Input
+              {...field}
+              placeholder=""
+              autoComplete="off"
+            />
+          </FormControl>
+          <FormDescription></FormDescription>
+        </FormItem>
+      )}
+    />
+
+    <FormField
+      key="mjZdGtNb"
+      control={control}
+      name="mjZdGtNb"
+      render={({ field }) => (
+        <FormItem>
+          <FormLabel>Phone</FormLabel>
+          <FormControl>
+            <Input
+              {...field}
+              placeholder=""
+              autoComplete="off"
+            />
+          </FormControl>
+          <FormDescription></FormDescription>
+        </FormItem>
+      )}
+    />
+
+    <Select>
+      <SelectTrigger className="w-[360px]">
+        <SelectValue placeholder="Select Your Region" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectGroup>
+          <SelectLabel>Regions</SelectLabel>
+          <SelectItem value="Carolinas">Carolinas</SelectItem>
+          <SelectItem value="Northern California">Northern California</SelectItem>
+          <SelectItem value="Denver">Denver</SelectItem>
+          <SelectItem value="Florida">Florida</SelectItem>
+          <SelectItem value="South Florida">South Florida</SelectItem>
+        </SelectGroup>
+      </SelectContent>
+    </Select>
   
 
     <FormField
