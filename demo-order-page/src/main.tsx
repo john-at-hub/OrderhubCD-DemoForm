@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './index.css'
 import App from './App.tsx'
 import DatePickerTestPage from './pages/DatePickerTestPage.tsx';
-import FormPage from './pages/FormPage.tsx'
+import { GeneratedForm } from './pages/FormPage.tsx';
 
 
 
