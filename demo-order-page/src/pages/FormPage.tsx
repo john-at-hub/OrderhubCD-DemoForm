@@ -86,6 +86,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import ProjectBucket from '@/components/custom/ProjectBucket'
 
 export const GeneratedForm = () => {
   const [step, setStep] = useState(0)
@@ -159,6 +160,7 @@ export const GeneratedForm = () => {
 
   return (
     <div className="space-y-4">
+        <ProjectBucket />
           <div className="flex items-center justify-center">
             {Array.from({ length: totalSteps }).map((_, index) => (
               <div key={index} className="flex items-center">
@@ -281,6 +283,21 @@ export const GeneratedForm = () => {
           <SelectItem value="Denver">Denver</SelectItem>
           <SelectItem value="Florida">Florida</SelectItem>
           <SelectItem value="South Florida">South Florida</SelectItem>
+        </SelectGroup>
+      </SelectContent>
+    </Select>
+
+    <Select>
+      <SelectTrigger className="w-[360px]">
+        <SelectValue placeholder="Choose Market Segment" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectGroup>
+          <SelectLabel>Segments</SelectLabel>
+          <SelectItem value="Small">Small</SelectItem>
+          <SelectItem value="Emerging">Emerging</SelectItem>
+          <SelectItem value="Select">Select</SelectItem>
+          <SelectItem value="key">Key</SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>
