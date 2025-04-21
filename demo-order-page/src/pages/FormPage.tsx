@@ -62,10 +62,25 @@ import {
 import {
   cn
 } from '@/lib/utils'
+import {
+  Input
+} from '@/components/ui/input'
+import {
+  Switch
+} from '@/components/ui/switch'
+import {
+  FileInput
+} from '@/components/ui/FileInput'
+import {
+  Textarea
+} from '@/components/ui/textarea'
+import {
+  Checkbox
+} from '@/components/ui/checkbox'
 
 export const GeneratedForm = () => {
   const [step, setStep] = useState(0)
-  const totalSteps = 1
+  const totalSteps = 2
 
   const form = useForm()
 
@@ -126,17 +141,169 @@ export const GeneratedForm = () => {
         {step === 0 && (
           <Form {...form}>
             <form onSubmit={handleSubmit(onSubmit)} className="grid gap-y-4">
-              <div className="border border-dashed rounded-md">
-                      <div className="flex flex-col items-center justify-center h-[8rem]">
-                        <h3 className="text-base font-semibold text-center">
-                          No Inputs Added Yet!
-                        </h3>
-                        <p className="text-xs text-muted-foreground text-center">
-                          Start building your form by adding input fields.
-                        </p>
-                      </div>
-                    </div>
               
+              
+    <FormField
+      key="Y3JX9JBZ"
+      control={control}
+      name="Y3JX9JBZ"
+      render={({ field }) => (
+        <FormItem>
+          <FormLabel>First Name</FormLabel>
+          <FormControl>
+            <Input
+              {...field}
+              placeholder=""
+              autoComplete="off"
+            />
+          </FormControl>
+          <FormDescription></FormDescription>
+        </FormItem>
+      )}
+    />
+  
+
+    <FormField
+      key="mjZdGtNb"
+      control={control}
+      name="mjZdGtNb"
+      render={({ field }) => (
+        <FormItem>
+          <FormLabel>Last Name</FormLabel>
+          <FormControl>
+            <Input
+              {...field}
+              placeholder=""
+              autoComplete="off"
+            />
+          </FormControl>
+          <FormDescription></FormDescription>
+        </FormItem>
+      )}
+    />
+  
+
+    <FormField
+      key="cGSaniOb"
+      control={control}
+      name="cGSaniOb"
+      render={({ field }) => (
+        <FormItem>
+          <FormLabel>Client Name</FormLabel>
+          <FormControl>
+            <Input
+              {...field}
+              placeholder=""
+              autoComplete="off"
+            />
+          </FormControl>
+          <FormDescription></FormDescription>
+        </FormItem>
+      )}
+    />
+  
+
+    <FormField
+      key="o5vWLo0B"
+      control={control}
+      name="o5vWLo0B"
+      render={({ field }) => (
+        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
+          <div className="space-y-0.5">
+            <FormLabel className="text-base">Required Test Switch</FormLabel>
+            <FormDescription></FormDescription>
+          </div>
+          <FormControl>
+            <Switch
+              checked={field.value}
+              onCheckedChange={field.onChange}
+            />
+          </FormControl>
+        </FormItem>
+      )}
+    />
+  
+
+    <FormField
+      key="JtDQjXXS"
+      control={control}
+      name="JtDQjXXS"
+      render={({ field }) => (
+        <FormItem>
+          <FormLabel>Order Sheet 1 Upload</FormLabel>
+          <FormControl>
+            <FileInput
+              value={field.value}
+              onChange={field.onChange}
+              accept="image/*, application/pdf"
+            />
+          </FormControl>
+          <FormDescription></FormDescription>
+        </FormItem>
+      )}
+    />
+  
+
+    <FormField
+      key="IjgcvbZL"
+      control={control}
+      name="IjgcvbZL"
+      render={({ field }) => (
+        <FormItem>
+          <FormLabel>Order Sheet 2 Upload</FormLabel>
+          <FormControl>
+            <FileInput
+              value={field.value}
+              onChange={field.onChange}
+              accept="image/*, application/pdf"
+            />
+          </FormControl>
+          <FormDescription></FormDescription>
+        </FormItem>
+      )}
+    />
+  
+
+    <FormField
+      key="WIhcQA9g"
+      control={control}
+      name="WIhcQA9g"
+      render={({ field }) => (
+        <FormItem>
+          <FormLabel>Notes</FormLabel>
+          <FormControl>
+            <Textarea
+              {...field}
+              placeholder=""
+              className="resize-none"
+              rows={5}
+            />
+          </FormControl>
+          <FormDescription></FormDescription>
+        </FormItem>
+      )}
+    />
+  
+
+    <FormField
+      key="3vWdF56y"
+      control={control}
+      name="3vWdF56y"
+      render={({ field }) => (
+        <FormItem>
+          <FormLabel>Input 8</FormLabel>
+          <FormControl>
+            <FileInput
+              value={field.value}
+              onChange={field.onChange}
+              accept="image/*, application/pdf"
+            />
+          </FormControl>
+          <FormDescription></FormDescription>
+        </FormItem>
+      )}
+    />
+  
               <div className="flex justify-between">
                 <Button
                   type="button"
@@ -148,7 +315,71 @@ export const GeneratedForm = () => {
                   Back
                 </Button>
                 <Button type="submit" size="sm" className="font-medium">
-                  {step === 0 ? 'Submit' : 'Next'}
+                  {step === 1 ? 'Submit' : 'Next'}
+                </Button>
+              </div>
+            </form>
+          </Form>
+        )}
+      
+
+        {step === 1 && (
+          <Form {...form}>
+            <form onSubmit={handleSubmit(onSubmit)} className="grid gap-y-4">
+              
+              
+    <FormField
+      key="XlbKCRqq"
+      control={control}
+      name="XlbKCRqq"
+      render={({ field }) => (
+        <FormItem>
+          <FormLabel>Client Contact</FormLabel>
+          <FormControl>
+            <Input
+              {...field}
+              placeholder=""
+              autoComplete="off"
+            />
+          </FormControl>
+          <FormDescription></FormDescription>
+        </FormItem>
+      )}
+    />
+  
+
+    <FormField
+      key="3rIgo6rp"
+      control={control}
+      name="3rIgo6rp"
+      render={({ field }) => (
+        <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
+          <FormControl>
+            <Checkbox
+              checked={field.value}
+              onCheckedChange={field.onChange}
+            />
+          </FormControl>
+          <div className="space-y-1 leading-none">
+            <FormLabel>Type of Deliverable needed</FormLabel>
+            <FormDescription></FormDescription>
+          </div>
+        </FormItem>
+      )}
+    />
+  
+              <div className="flex justify-between">
+                <Button
+                  type="button"
+                  className="font-medium"
+                  size="sm"
+                  onClick={handleBack}
+                  disabled={step === 0}
+                >
+                  Back
+                </Button>
+                <Button type="submit" size="sm" className="font-medium">
+                  {step === 1 ? 'Submit' : 'Next'}
                 </Button>
               </div>
             </form>
