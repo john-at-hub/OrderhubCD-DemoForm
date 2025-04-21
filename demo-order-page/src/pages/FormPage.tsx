@@ -82,6 +82,10 @@ export const GeneratedForm = () => {
   const [step, setStep] = useState(0)
   const totalSteps = 2
 
+  const [formData, setFormData] = useState([{name: 'test1'}, {name: 'test2'}])
+
+  console.table(formData)
+
   const form = useForm()
 
   const {
