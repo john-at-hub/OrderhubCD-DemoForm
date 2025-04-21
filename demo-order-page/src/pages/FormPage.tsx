@@ -92,6 +92,20 @@ export const GeneratedForm = () => {
   const totalSteps = 2
 
   const [formData, setFormData] = useState([{name: 'test1'}, {name: 'test2'}])
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+
+  function myHandleSubmit(e: React.FormEvent) {
+    e.preventDefault(); // Prevent page reload
+    const newEntry = {
+      firstName,
+      lastName,
+    };
+    setFormData(prev => [...prev, newEntry]);
+    // Clear the fields after submission if desired
+    setFirstName('');
+    setLastName('');
+  }
 
   console.table(formData)
 
@@ -103,14 +117,36 @@ export const GeneratedForm = () => {
     reset
   } = form
 
-  const onSubmit = async (formData: unknown) => {
+  // Default submit function
+
+  // const onSubmit = async (formData: unknown) => {
+  //   if (step < totalSteps - 1) {
+  //     setStep(step + 1)
+  //   } else {
+  //     console.log(formData)
+  //     setStep(0)
+  //     reset()
+
+  //     toast.success("Form successfully submitted")
+  //   }
+  // }
+
+  const onSubmit = async (formData: any) => {
     if (step < totalSteps - 1) {
       setStep(step + 1)
     } else {
       console.log(formData)
+  
+      // Add new entry to savedFormData state
+      const newEntry = {
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+      }
+      setFormData(prev => [...prev, newEntry])
+  
       setStep(0)
       reset()
-
+  
       toast.success("Form successfully submitted")
     }
   }
@@ -157,9 +193,9 @@ export const GeneratedForm = () => {
               
               
     <FormField
-      key="Y3JX9JBZ"
+      key="firstName"
       control={control}
-      name="Y3JX9JBZ"
+      name="firstName"
       render={({ field }) => (
         <FormItem>
           <FormLabel>First Name</FormLabel>
@@ -177,9 +213,9 @@ export const GeneratedForm = () => {
   
 
     <FormField
-      key="mjZdGtNb"
+      key="lastName"
       control={control}
-      name="mjZdGtNb"
+      name="lastName"
       render={({ field }) => (
         <FormItem>
           <FormLabel>Last Name</FormLabel>
@@ -196,9 +232,9 @@ export const GeneratedForm = () => {
     />
 
     <FormField
-      key="mjZdGtNb"
+      key="mjZdGtNbd"
       control={control}
-      name="mjZdGtNb"
+      name="mjZdGtNbd"
       render={({ field }) => (
         <FormItem>
           <FormLabel>Email</FormLabel>
@@ -215,9 +251,9 @@ export const GeneratedForm = () => {
     />
 
     <FormField
-      key="mjZdGtNb"
+      key="mjZdGtNbe"
       control={control}
-      name="mjZdGtNb"
+      name="mjZdGtNbe"
       render={({ field }) => (
         <FormItem>
           <FormLabel>Phone</FormLabel>
