@@ -184,3 +184,7 @@ button:focus-visible {
     @apply bg-background text-foreground;
   }
 }
+
+.datepicker-override button {
+  background-color: white;
+}
