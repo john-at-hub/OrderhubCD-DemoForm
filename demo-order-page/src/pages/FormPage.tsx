@@ -305,28 +305,6 @@ export const GeneratedForm = () => {
       )}
     />
   
-
-    <FormField
-      key="o5vWLo0B"
-      control={control}
-      name="o5vWLo0B"
-      render={({ field }) => (
-        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
-          <div className="space-y-0.5">
-            <FormLabel className="text-base">Required Test Switch</FormLabel>
-            <FormDescription></FormDescription>
-          </div>
-          <FormControl>
-            <Switch
-              checked={field.value}
-              onCheckedChange={field.onChange}
-            />
-          </FormControl>
-        </FormItem>
-      )}
-    />
-  
-
     <FormField
       key="JtDQjXXS"
       control={control}
@@ -451,7 +429,7 @@ export const GeneratedForm = () => {
     />
   
 
-    <FormField
+    {/* <FormField
       key="3rIgo6rp"
       control={control}
       name="3rIgo6rp"
@@ -469,28 +447,28 @@ export const GeneratedForm = () => {
           </div>
         </FormItem>
       )}
-    />
+    /> */}
   
-              <div className="flex justify-between">
-                <Button
-                  type="button"
-                  className="font-medium"
-                  size="sm"
-                  onClick={handleBack}
-                  disabled={step === 0}
-                >
-                  Back
-                </Button>
-                <Button type="submit" size="sm" className="font-medium">
-                  {step === 1 ? 'Submit' : 'Next'}
-                </Button>
-              </div>
-            </form>
-          </Form>
-        )}
-      
-            </CardContent>
-          </Card>
-        </div>
+          <div className="flex justify-between">
+            <Button
+              type="button"
+              className="font-medium"
+              size="sm"
+              onClick={handleBack}
+              disabled={step === 0}
+            >
+              Back
+            </Button>
+            <Button type="submit" size="sm" className="font-medium">
+              {step === 1 ? 'Submit' : 'Next'}
+            </Button>
+          </div>
+        </form>
+      </Form>
+    )}
+  
+        </CardContent>
+      </Card>
+    </div>
   )
 }
