@@ -15,7 +15,7 @@ createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/datepicker" element={<DatePickerTestPage />} />
-        <Route path="/form-test" element={<FormPage />} />
+        <Route path="/form-test" element={<GeneratedForm />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
