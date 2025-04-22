@@ -1,35 +1,3 @@
-// import { useState } from "react"
-
-// function FormPage() {
- 
-//   const [testData, setTestData] = useState([
-//     {
-//       name: 'Jolly',
-//       number: 431,
-//       locations: 'San Antonio, TX',
-//       id: 1
-//     },
-//     {
-//       name: 'Amber',
-//       number: 64,
-//       locations: 'Midland, TX',
-//       id: 2
-//     },
-//   ])
-
-//   const displayData = testData.map(item => <p key={item.id}>{item.name}</p>)
-       
-
-//     return (
-//       <>        
-//         <h2 className="text-3xl font-bold underline">This is the form testing Page</h2>
-//         {displayData}
-//       </>
-//     )
-// }
-
-// export default FormPage
-
 'use client'
 
 import {
@@ -117,20 +85,6 @@ export const GeneratedForm = () => {
     control,
     reset
   } = form
-
-  // Default submit function
-
-  // const onSubmit = async (formData: unknown) => {
-  //   if (step < totalSteps - 1) {
-  //     setStep(step + 1)
-  //   } else {
-  //     console.log(formData)
-  //     setStep(0)
-  //     reset()
-
-  //     toast.success("Form successfully submitted")
-  //   }
-  // }
 
   const onSubmit = async (formData: any) => {
     if (step < totalSteps - 1) {
@@ -444,28 +398,7 @@ export const GeneratedForm = () => {
         </FormItem>
       )}
     />
-  
-
-    {/* <FormField
-      key="3rIgo6rp"
-      control={control}
-      name="3rIgo6rp"
-      render={({ field }) => (
-        <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
-          <FormControl>
-            <Checkbox
-              checked={field.value}
-              onCheckedChange={field.onChange}
-            />
-          </FormControl>
-          <div className="space-y-1 leading-none">
-            <FormLabel>Type of Deliverable needed</FormLabel>
-            <FormDescription></FormDescription>
-          </div>
-        </FormItem>
-      )}
-    /> */}
-  
+   
           <div className="flex justify-between">
             <Button
               type="button"
