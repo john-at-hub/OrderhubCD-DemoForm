@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from "react-router-dom";
 import { useForm } from 'react-hook-form'
 import { Button } from '@/components/ui/button'
 import {
@@ -30,8 +31,8 @@ type Props = {
 
 export const GeneratedForm = ({ onSubmit }: Props) => {
   const [step, setStep] = useState(0)
-  const totalSteps = 2
-
+  const totalSteps = 3
+  const navigate = useNavigate();
   const form = useForm()
 
   const {
@@ -43,15 +44,17 @@ export const GeneratedForm = ({ onSubmit }: Props) => {
 
   const handleFinalSubmit = async (formData: any) => {
     if (step < totalSteps - 1) {
-      setStep(step + 1)
+      setStep(step + 1);
     } else {
-      console.log('Submitting full form data:', formData)
-      onSubmit(formData) // 👈 Lift to parent
-      setStep(0)
-      reset()
-      toast.success("Form successfully submitted")
+      console.log('Submitting full form data:', formData);
+      onSubmit(formData); // ⬅️ Lifting to parent
+      setStep(0);
+      reset();
+      toast.success("Form successfully submitted");
+      navigate("/admin"); // ⬅️ Navigate to view submitted data
     }
-  }
+  };
+  
 
   const handleBack = () => {
     if (step > 0) setStep(step - 1)
@@ -210,6 +213,32 @@ export const GeneratedForm = ({ onSubmit }: Props) => {
               )}
 
               {step === 1 && (
+                <FormField
+                  control={control}
+                  name="clientContact"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Client Contact</FormLabel>
+                      <FormControl><Input {...field} /></FormControl>
+                    </FormItem>
+                  )}
+                />
+              )}
+
+              {step === 2 && (
+                <FormField
+                  control={control}
+                  name="clientContact"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Client Contact</FormLabel>
+                      <FormControl><Input {...field} /></FormControl>
+                    </FormItem>
+                  )}
+                />
+              )}
+
+              {step === 3 && (
                 <FormField
                   control={control}
                   name="clientContact"
